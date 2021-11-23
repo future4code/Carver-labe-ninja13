@@ -1,8 +1,4 @@
 import React, { Component } from 'react';
-import '../App.css';
-import { Link } from "react-router-dom";
-import Cadastro from './Cadastro';
-import Servico from './Servicos';
 import LabeNinjaLogo from '../img/LabeNinjaLogo.png';
 import Cabeleleira from '../img/Cabeleleira.png';
 import manicure from '../img/manicure.png';
@@ -17,7 +13,7 @@ import engenheiro from '../img/engenheiro.png';
 
 
 
-export class AppContainer extends React.Component {
+export class Servicos extends React.Component {
     state =  {
       produto: [{
         id:1,
@@ -109,9 +105,9 @@ render() {
           <img src={LabeNinjaLogo}/>
           <div id="menu-horizontal">
             <ul>
-              <li><Link  to="/">Home</Link></li>  |
-              <li><Link to="Servicos">Serviços</Link></li>   |
-              <li><Link to="Cadastro">Cadastro</Link></li>   
+              <li>Home</li>  |
+              <li>Serviços</li>   |
+              <li>Cadastro</li>   
             </ul>
 
           </div>
@@ -128,7 +124,20 @@ render() {
 
         </div>
         <div class="container">
-            
+          <div class="servicos-flex-container">
+            {this.state.produto.map((produto) =>(
+              <div class="item-servico-flex">
+                <a>
+                  <img src={produto.image} alt="prestacao de servico" class="foto-servico"/>
+                </a>
+                <h3>{produto.name}</h3>
+                <br/>
+                <p>{produto.descrition}</p>
+                <h3>R$:{produto.value}</h3>
+                <button class="botao-adc-carrinho" onClick={() => this.AdcionarSacola(produto)}>adcionar ao carrinho</button>
+              </div>
+            ))}
+          </div>
         </div>
       </main>
       <footer id="container-footer">
@@ -149,4 +158,4 @@ render() {
 }
 }
 
-export default AppContainer
+export default Servicos
