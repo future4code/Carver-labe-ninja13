@@ -5,97 +5,16 @@ import { Link } from "react-router-dom";
 import Cadastro from './Cadastro';
 import Servico from './Servicos';
 import LabeNinjaLogo from '../img/LabeNinjaLogo.png';
-import Cabeleleira from '../img/Cabeleleira.png';
-import manicure from '../img/manicure.png';
-import massagem from '../img/massagem.png';
-import pedreiro from '../img/pedreiro.png';
-import pintor from '../img/pintor.png';
-import marceneiro from '../img/marceneiro.png';
-import jardineiro from '../img/jardineiro.png';
-import designInteriores from '../img/designInteriores.png';
-import arquiteto from '../img/arquiteto.png';
-import engenheiro from '../img/engenheiro.png';
-import Filtros from './Filtro'
-import { pacoteDeProdutos } from '../pacoteDeProdutos'
-import Ordenacao from './Ordenacao'
+
 
 
 
 export class AppContainer extends React.Component {
-    state =  {
-      produto: [{
-        id:1,
-        name:"Cabeleleira",
-        descrition:"Estética Capilar",
-        value:90.00,
-        image:Cabeleleira
-      },
-      {
-        id:2,
-        name:"Manicure",
-        descrition:"Estética das Unhas",
-        value:50.00,
-        image:manicure
-      },
-      {
-        id:3,
-        name:"Massagem",
-        descrition:"Bem estar e saude",
-        value:90.00,
-        image:massagem
-      },
-      {
-        id:4,
-        name:"Pedreiro",
-        descrition:"A melhor reforma",
-        value:1500.00,
-        image:pedreiro
-      },
-      {
-        id:5,
-        name:"Pintor",
-        descrition:"Pintura de qualidade",
-        value:300.00,
-        image:pintor
-      },
-      {
-        id:6,
-        name:"Marceneiro",
-        descrition:"Reforma de telhado",
-        value:90.00,
-        image:marceneiro
-      },
-      {
-        id:7,
-        name:"Jardineiro",
-        descrition:"Manutenção do seu jardim",
-        value:150.00,
-        image:jardineiro
-      },
-      {
-        id:8,
-        name:"Design de Interiores",
-        descrition:"Decorando o seu lar",
-        value:295.00,
-        image:designInteriores
-      },
-      {
-        id:9,
-        name:"Arquiteto",
-        descrition:"Pensando em cada canto da sua casa.",
-        value:180.00,
-        image:arquiteto
-      },
-      {
-        id:10,
-        name:"Engenheiro",
-        descrition:"Construindo novos",
-        value:2.500,
-        image:engenheiro
-      }
+    
 
-    ]
-    }
+
+    
+    
     state = {
     filtroMinimo: 0,
     filtroMaximo: 10000000,
@@ -148,9 +67,10 @@ export class AppContainer extends React.Component {
  
 
 
+
   
 
-render() {
+
   
  render() {
     //Renderização dos produtos filtrados
@@ -195,10 +115,10 @@ render() {
 
       <main>
         <div id= "conteudo">
-          {/* <div id= "inicio-home">
-            <img id= "foto-servico" src={Cabeleleira}/>
+          <div id= "inicio-home">
+            <img class="footer navbar-fixed-bottom" id= "foto-servico"/>
             <br/>
-          </div> */}
+          </div>
 
         </div>
         <div class="container">
