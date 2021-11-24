@@ -1,5 +1,5 @@
 import React from 'react'
-import { Filtro, GrupoDeFiltros } from './estiloDoFiltro'
+import { BoxFiltro, Filtro, GrupoDeFiltros } from './estiloDoFiltro'
 
 
 class Filtros extends React.Component {
@@ -10,21 +10,21 @@ class Filtros extends React.Component {
             <h2>Filtros</h2>
             <Filtro>
                 Filtro mínimo:
-                <input type={"number"}
+                <BoxFiltro type={"number"}
                     value={this.props.minimo}
                     onChange={this.props.onChangeMinimo}
                 />
             </Filtro>
             <Filtro>
                 Filtro máximo:
-                <input type={"number"}
+                <BoxFiltro type={"number"}
                 value={this.props.maximo}
                 onChange={this.props.onChangeMaximo }
                 />
             </Filtro>
             <Filtro>
                 Busca por nome:
-                <input type={"text"}
+                <BoxFiltro type={"text"}
                 value={this.props.buscaPorNome}
                 onChange={this.props.onChangeBuscaPorNome}
                 />
