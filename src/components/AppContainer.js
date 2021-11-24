@@ -5,6 +5,9 @@ import { Link } from "react-router-dom";
 import Cadastro from './Cadastro';
 import Servico from './Servicos';
 import LabeNinjaLogo from '../img/LabeNinjaLogo.png';
+import Ordenacao from './Ordenacao';
+import Filtros from './Filtro';
+import { pacoteDeProdutos } from '../pacoteDeProdutos';
 
 
 
@@ -64,7 +67,7 @@ export class AppContainer extends React.Component {
       return produto.name.includes(this.state.filtroBuscaPorNome)
     })
     return pacotesFiltrado
- 
+  }
 
 
 
@@ -91,8 +94,7 @@ export class AppContainer extends React.Component {
           return alert("Algum erro inesperado ocorreu")
       }
     })
-    console.log(produtosOrdenados)
-    console.log("ordenação",this.state.ordenacao)
+    
  
 
   return (
