@@ -5,6 +5,9 @@ import { Link } from "react-router-dom";
 import Filtros from './Filtro';
 import Ordenacao from './Ordenacao';
 import { BuscaOrdenacaoContainer } from './estiloBuscaOrdenacao';
+import ItemCarrinho from './ItemCarrinho';
+import Carrinho from './Carrinho';
+
 
 
 
@@ -17,7 +20,9 @@ export class Servicos extends React.Component {
     filtroMinimo: 0,
     filtroMaximo: 10000000,
     filtroBuscaPorNome: "",
-    ordenacao: "Crescente"
+    ordenacao: "Crescente",
+    carrinho: [],
+    valorTotal: "oi"
   }
 
 
@@ -90,7 +95,12 @@ export class Servicos extends React.Component {
       })
   }
 
-
+  AdcionarSacola = (produto) => {
+    this.setState({
+      carrinho: produto
+    })
+    console.log("carrinho", this.state.carrinho)
+  }
 
 
   render() {
@@ -104,7 +114,7 @@ export class Servicos extends React.Component {
         case "Crescente":
           return produtoAtual.price - produtoSeguinte.price
         case "Decrescente":
-          return  produtoSeguinte.price - produtoAtual.price
+          return produtoSeguinte.price - produtoAtual.price
         case "OrdemAlfabetica":
           return produtoAtual.title.localeCompare(produtoSeguinte.title)
         case "Prazo":
@@ -113,7 +123,8 @@ export class Servicos extends React.Component {
           return alert("Algum erro inesperado ocorreu")
       }
     })
-    console.log(produtosOrdenados)
+
+
 
     return (
 
@@ -125,28 +136,33 @@ export class Servicos extends React.Component {
               <ul>
                 <li><Link to="/">Home</Link></li>  |
                 <li><Link to="Servicos">Serviços</Link></li>   |
-                <li><Link to="Cadastro">Cadastro</Link></li>
+                <li><Link to="Cadastro">Cadastro</Link></li> |
               </ul>
 
             </div>
           </div>
           <BuscaOrdenacaoContainer>
-          <Filtros
-            minimo={this.state.filtroMinimo}
-            maximo={this.state.filtroMaximo}
-            buscaPorNome={this.state.filtroBuscaPorNome}
+            <Filtros
+              minimo={this.state.filtroMinimo}
+              maximo={this.state.filtroMaximo}
+              buscaPorNome={this.state.filtroBuscaPorNome}
 
-            //Está ligado com o onChange dos inputs do componente filtro 
-            onChangeMinimo={this.manipularValorDoFiltroMinimo}
-            onChangeMaximo={this.manipularValorDoFiltroMaximo}
-            onChangeBuscaPorNome={this.manipularValorDoFiltroBuscaPorNome}
+              //Está ligado com o onChange dos inputs do componente filtro 
+              onChangeMinimo={this.manipularValorDoFiltroMinimo}
+              onChangeMaximo={this.manipularValorDoFiltroMaximo}
+              onChangeBuscaPorNome={this.manipularValorDoFiltroBuscaPorNome}
             />
             <Ordenacao
-            // ordenacao={}
-            onChangeOrdenacao={this.manipularValorOrdenacao}
+              // ordenacao={}
+              onChangeOrdenacao={this.manipularValorOrdenacao}
+            />
+          </BuscaOrdenacaoContainer>,
+
+          <Carrinho
+            valorTotal={56}
           />
-          </BuscaOrdenacaoContainer>
-          
+
+
         </header>
 
         <main>

@@ -11,6 +11,7 @@ import {
   Routes,
   Route
 } from "react-router-dom";
+import Carrinho from './components/Carrinho';
 
 
 const rootElement = document.getElementById("root");
@@ -21,6 +22,7 @@ render(
       <Route path="/" element={<App/>}/>
       <Route path="Cadastro" element={<Cadastro/>}/>
       <Route path ="Servicos" element={<Servicos/>}/>
+      <Route path ="Carrinho" element={<Carrinho/>}/>
     </Routes>
   </BrowserRouter>,rootElement
 );
